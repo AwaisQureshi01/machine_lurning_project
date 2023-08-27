@@ -1,4 +1,5 @@
 import os
+import pickle
 import sys
 sys.path.insert(0, "../src")
 
@@ -40,6 +41,14 @@ def evaluate_models(X_train, Y_train, X_test, Y_test, models):
             }
 
         return report
+
+    except Exception as e:
+        raise CustomException(e, sys)
+
+def load_object(file_path):
+    try:
+        with open(file_path, "rb") as file_obj:
+            return pickle.load(file_obj)
 
     except Exception as e:
         raise CustomException(e, sys)

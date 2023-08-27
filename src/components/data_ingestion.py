@@ -7,9 +7,8 @@ sys.path.insert(0,"../src")
 # Add the project root directory to the Python path
 
 
-from src.exception import *
 from src.logger import logging
-
+from src.exception import CustomException
 import pandas as pd 
 
 from sklearn.model_selection import train_test_split

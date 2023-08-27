@@ -16,58 +16,6 @@ import os
 
 from src.utils import save_object
 
-@dataclass
-class DataTransformationConfig:
-    preprocesser_obj_file_path = os.path.join("artifacts","preprocessor.pkl")
-
-
-# class DataTransformations:
-#     def __init__(self):
-#         self.data_transformation_config = DataTransformationConfig()
-
-#     def get_data_transformer_object(self):
-#         try:
-#             numerical_columns = ["writing_score","reading_score"]
-#             categorical_columns = [
-#                 "gender",
-#                 'parental_level_of_education',
-#                 "lunch",
-#                 "test_preparation_course",
-#                 "race_ethnicity"
-
-#             ]
-
-#             num_piplines = Pipeline(
-#                 steps=[
-#                     ("impute",SimpleImputer(strategy="median")),
-#                     ("scaler",StandardScaler(with_mean=False))
-#                 ]
-#             )
-            
-#             cat_piplines = Pipeline(
-#                 steps=[
-#                     ("impute",SimpleImputer(strategy="most_frequent")),
-#                     ("one_hot_encoder",OneHotEncoder()),
-#                     ("scaler",StandardScaler())
-#                 ]
-#             )
-
-#             logging.info(f"Numerical columns: {categorical_columns}")
-            
-#             logging.info(f"Categorical Columns: {numerical_columns}")
-
-#             preprocesser=ColumnTransformer(
-#                 [
-#                     ("num_pipline",num_piplines,numerical_columns),
-#                     ("cat_pipelines",cat_piplines,categorical_columns )
-#                 ]
-#             )
-
-#             return preprocesser
-
-#         except Exception as e:
-#             raise CustomException(e,sys)
-            
 
 @dataclass
 class DataTransformationConfig:
